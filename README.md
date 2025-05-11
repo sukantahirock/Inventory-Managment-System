@@ -1,10 +1,3 @@
-
-````markdown
-# 🛒 Inventory Management System (Django)
-
-A Django-based Inventory Management System with role-based user access. Designed for managing buyers, sellers, product inventory, and order tracking.
-
-
 ## 📸 Screenshots
 
 ### 🧑‍💼 Admin Dashboard
@@ -13,6 +6,13 @@ A Django-based Inventory Management System with role-based user access. Designed
 ![Login Page](screenshots/suki2.png)
 ### 📦 Product List
 ![Product List](screenshots/suki3.png)
+````markdown
+# 🛒 Inventory Management System (Django)
+
+A Django-based Inventory Management System with role-based user access. Designed for managing buyers, sellers, product inventory, and order tracking.
+
+
+
 
 
 ---
