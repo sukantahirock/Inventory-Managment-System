@@ -1,11 +1,11 @@
 ## 📸 Screenshots
 
 ### 🧑‍💼 Admin Dashboard
-![Admin Dashboard](screenshots/suki1.png)
+![Admin Dashboard](screenshots/suki2.png)
 ### 🔐 Login Page
-![Login Page](screenshots/suki2.png)
+![Login Page](screenshots/suki1.png)
 ### 📦 Product List
-![Product List](screenshots/suki3.png)
+![List](screenshots/suki3.png)
 ````markdown
 # 🛒 Inventory Management System (Django)
 
