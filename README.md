@@ -5,6 +5,16 @@
 A Django-based Inventory Management System with role-based user access. Designed for managing buyers, sellers, product inventory, and order tracking.
 
 ---
+## 📸 Screenshots
+
+### 🧑‍💼 Admin Dashboard
+![Admin Dashboard](screenshots/suki1.png)
+### 🔐 Login Page
+![Login Page](screenshots/suki2.png)
+### 📦 Product List
+![Product List](screenshots/suki3.png)
+
+
 
 ## ✨ Features
 
