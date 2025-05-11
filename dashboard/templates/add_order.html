@@ -1,0 +1,22 @@
+{% block content %}
+<div class="container mt-5" style="max-width:600px; margin:auto; font-family:Arial,sans-serif;">
+    <h2 style="text-align:center; margin-bottom:20px;">Add New Order</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div style="margin-bottom:15px;">
+            {{ form.product.label_tag }}<br>
+            {{ form.product }}
+        </div>
+        <div style="margin-bottom:15px;">
+            {{ form.quantity.label_tag }}<br>
+            {{ form.quantity }}
+        </div>
+        <button type="submit" style="padding:10px 15px; background-color:#4CAF50; color:white; border:none; border-radius:5px; cursor:pointer;">
+            Submit Order
+        </button>
+    </form>
+    <div style="margin-top:20px;">
+        <a href="{% url 'buyer_dashboard' %}" style="color:#4CAF50; text-decoration:none;">← Back to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

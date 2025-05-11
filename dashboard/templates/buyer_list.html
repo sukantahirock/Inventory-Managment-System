@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Buyers</h2>
+    <a href="{% url 'buyer_create' %}" class="btn btn-primary">Add Buyer</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for buyer in buyers %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ buyer.name }}</td>
+            <td>{{ buyer.email }}</td>
+            <td>{{ buyer.phone }}</td>
+            <td>
+                <a href="{% url 'buyer_update' buyer.id %}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="{% url 'buyer_delete' buyer.id %}" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

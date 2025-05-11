@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="max-width: 1000px; margin: 20px auto; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <h2 style="color: #343a40; border-bottom: 2px solid #6c757d; padding-bottom: 10px; margin-bottom: 20px;">Pending Approvals</h2>
+
+    <h3 style="color: #495057; margin-top: 25px;">Sellers</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+        <thead>
+            <tr style="background-color: #e9ecef;">
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Name</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Email</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for seller in sellers %}
+                <tr style="border-bottom: 1px solid #dee2e6;">
+                    <td style="padding: 12px;">{{ seller.name }}</td>
+                    <td style="padding: 12px;">{{ seller.email }}</td>
+                    <td style="padding: 12px;">
+                        <a href="{% url 'approve_user' 'seller' seller.id %}" style="background-color: #28a745; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; margin-right: 8px;">Approve</a>
+                        <a href="{% url 'delete_user' 'seller' seller.id %}" onclick="return confirm('Are you sure you want to delete this user?')" style="background-color: #dc3545; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none;">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3" style="padding: 12px; text-align: center;">No pending sellers</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3 style="color: #495057; margin-top: 25px;">Buyers</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+            <tr style="background-color: #e9ecef;">
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Name</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Email</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 1px solid #dee2e6;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for buyer in buyers %}
+                <tr style="border-bottom: 1px solid #dee2e6;">
+                    <td style="padding: 12px;">{{ buyer.name }}</td>
+                    <td style="padding: 12px;">{{ buyer.email }}</td>
+                    <td style="padding: 12px;">
+                        <a href="{% url 'approve_user' 'buyer' buyer.id %}" style="background-color: #28a745; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; margin-right: 8px;">Approve</a>
+                        <a href="{% url 'delete_user' 'buyer' buyer.id %}" style="background-color: #dc3545; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none;">Delete</a>
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3" style="padding: 12px; text-align: center;">No pending buyers</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

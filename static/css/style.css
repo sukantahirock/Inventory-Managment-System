@@ -1,0 +1,58 @@
+/* Reset and full-height enforcement */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* Full-page wrapper (flex container) */
+#wrapper {
+    display: flex;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    min-height: 100%;
+}
+
+/* Sidebar (fixed width, full height) */
+#sidebar-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100%;
+    background-color: #343a40;
+    transition: all 0.3s ease; /* Smooth toggle animation */
+}
+
+/* Main content area (flex-grow for full width) */
+#page-content-wrapper {
+    flex: 1;
+    min-width: 0; /* Fixes flexbox overflow bug */
+    overflow-y: auto; /* Scrollable content */
+    width: calc(100% - 250px); /* Adjust for sidebar width */
+}
+
+/* Navbar (prevent shrinking) */
+.navbar {
+    flex-shrink: 0;
+}
+
+/* Full-width container override */
+.container-fluid {
+    padding: 20px;
+    width: 100%;
+    max-width: none; /* Disables Bootstrap's default max-width */
+}
+
+/* Fix for Bootstrap grid margins */
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/* Toggled state (sidebar hidden) */
+#wrapper.toggled {
+    margin-left: -250px; /* Shift wrapper to hide sidebar */
+}
+#wrapper.toggled #page-content-wrapper {
+    width: 100%; /* Expand content to full width */
+}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Choose Sign Up Option</h2>
+    <div class="d-flex justify-content-center gap-4">
+        <a href="{% url 'buyer_signup' %}" class="btn btn-primary btn-lg">Buyer Sign Up</a>
+        <a href="{% url 'seller_signup' %}" class="btn btn-success btn-lg">Seller Sign Up</a>
+    </div>
+</div>
+{% endblock %}
