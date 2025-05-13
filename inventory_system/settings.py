@@ -136,9 +136,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'haridasnag01715511031@gmail.com'
-EMAIL_HOST_PASSWORD = 'kdkj hnmq lgxa wubz'  # ওই 16-digit app password
-DEFAULT_FROM_EMAIL = 'haridasnag01715511031@gmail.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''  # ওই 16-digit app password
+DEFAULT_FROM_EMAIL = ''
 
 # settings.py
 SESSION_COOKIE_AGE = 86400  # 1 দিন
